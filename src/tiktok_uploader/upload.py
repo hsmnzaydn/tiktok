@@ -296,6 +296,8 @@ def _set_description(driver, description: str) -> None:
                     (By.XPATH, config['selectors']['upload']['mention_box'])
                 ))
                 desc.send_keys(Keys.ENTER)
+                # Her hashtag'den sonra 1 saniye bekle
+                time.sleep(1)
             elif word[0] == "@":
                 logger.debug(green('- Adding Mention: ' + word))
                 desc.send_keys(word)
